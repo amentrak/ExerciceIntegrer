@@ -2,15 +2,13 @@ package be.ac.umons;
 import java.util.Observer;
 public abstract class Personne implements Observer{
     private int id;
-    private String name;
-    public Personne(String name, int id){
-        this.name=name;
+    private String Name;
+    public Personne(String Name, int id){
+        this.Name=Name;
         this.id=id;
     }
     public String getName() {
-        return name;
+        return Name;
     }
-    public int getId(){
-        return id;
-    }
+    public int getId(){ return id; }
 }
