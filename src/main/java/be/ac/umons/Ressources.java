@@ -22,7 +22,6 @@ public class Ressources implements RessourceComponent  {
 
     public void addStock(Stock i){
         listStock.add(i);
-
     }
 
     @Override
@@ -33,5 +32,9 @@ public class Ressources implements RessourceComponent  {
     @Override
     public void removeListener(InvalidationListener invalidationListener) {
 
+    }
+
+    public String toString(){
+        return this.toString();
     }
 }

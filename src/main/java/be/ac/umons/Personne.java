@@ -11,4 +11,8 @@ public abstract class Personne implements Observer{
         return Name;
     }
     public int getId(){ return id; }
+
+    public String toString(){
+        return this.toString();
+    }
 }

@@ -19,4 +19,7 @@ public class Projet {
         listTache.add(i);
     }
 
+    public String toString(){
+        return this.toString();
+    }
 }

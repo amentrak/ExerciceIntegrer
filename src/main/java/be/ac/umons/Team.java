@@ -25,4 +25,8 @@ public class Team {
         listWorker.add(i);
     }
 
+    public String toString(){
+        return this.toString();
+    }
+
 }

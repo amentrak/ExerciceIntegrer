@@ -20,4 +20,8 @@ public class AgendaEntry  {
         return id_agenda;
     }
 
+    public String toString(){
+        return this.toString();
+    }
+
 }

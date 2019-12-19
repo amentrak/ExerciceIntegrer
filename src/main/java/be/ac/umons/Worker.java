@@ -27,4 +27,8 @@ public class Worker extends Personne {
     public void update(Observable observable, Object o) {
 
     }
+
+    public String toString(){
+        return this.toString();
+    }
 }

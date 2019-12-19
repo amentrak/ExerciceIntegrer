@@ -41,9 +41,12 @@ public class Tache extends Observable {
     public void addRessources(Ressources i){
         listRessources.add(i);
     }
-    public void addRessources(Skill i){
+    public void addSkills(Skill i){
         listSkill.add(i);
     }
 
+    public String toString(){
+        return this.toString();
+    }
 
 }

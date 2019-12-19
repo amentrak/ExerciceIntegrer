@@ -9,4 +9,8 @@ public class Skill  {
     public String getName() {
         return name;
     }
+
+    public String toString(){
+        return this.toString();
+    }
 }
