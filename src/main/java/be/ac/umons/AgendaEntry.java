@@ -6,6 +6,7 @@ public class AgendaEntry  {
     private int id_agenda;
     private Date Datedébut;
     private Date Datefin;
+
     public AgendaEntry(int id_agenda, Date Datedébut,Date Datefin){}
 
     public Date getDatedébut() {
