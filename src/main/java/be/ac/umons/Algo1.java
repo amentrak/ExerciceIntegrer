@@ -64,6 +64,12 @@ public class Algo1 implements ChoixAlgo {
                             GregorianCalendar gc = new GregorianCalendar();
                             gc.setTime(df);
                             gc.add(GregorianCalendar.DATE, durée);
+                            if (tache.getÉquipe().getListWorker().get(j).getListTache().size() != 0) {
+                                df = tache.getÉquipe().getListWorker().get(j).getListTache().get(tache.getÉquipe().getListWorker().get(j).getListTache().size() - 1).getDatefin();
+                            }
+                            else {
+                                df = calendar.getTime() ;
+                            }
                             if (deadline.compareTo(df) >= 0) {
                                 tache.setDatefin(df);
                                 tache.addtravailleurs(tache.getÉquipe().getListWorker().get(j));
