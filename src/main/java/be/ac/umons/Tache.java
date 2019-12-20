@@ -2,31 +2,35 @@ package be.ac.umons;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import java.util.ArrayList;
+import java.util.Observable;
 import java.util.Date;
 
 public class Tache extends Observable {
     private String name;
     private String description;
+
     private ArrayList<Ressources> listRessources = new ArrayList<>();
     private Team équipe;
     private ArrayList<Skill> listSkill = new ArrayList<>();
-    private AgendaEntry agenda;
     private ArrayList<Worker> travailleurs = new ArrayList<>();
     private int durée;
     private Date deadline;
     private Date datedébut;
     private Date datefin;
 
-
-    public Tache(String name,String description, ArrayList<Ressources> listRessources, int durée, Date deadline, ArrayList<Skill> listSkill){
+    public Tache(){}
+    public Tache(String name, String description, ArrayList<Ressources> listRessources, int durée, Date deadline, ArrayList<Skill> listSkill) {
         this.name = name;
         this.description = description;
         this.durée = durée;
         this.listRessources = listRessources;
         this.listSkill = listSkill;
-        this.deadline =deadline;
+        this.deadline = deadline;
         this.durée = durée;
+
     }
+
     public String getName() {
         return name;
     }
@@ -47,10 +51,20 @@ public class Tache extends Observable {
         return listSkill;
     }
 
-    public AgendaEntry getAgenda() {
-        return agenda;
+    public Date getDatedébut() {
+        return datedébut;
     }
 
+    public void setDatefin(Date datefin) {
+        this.datefin = datefin;
+    }
+    public Date getDatefin() {
+        return datefin;
+    }
+
+    public void setDatedébut(Date datedébut) {
+        this.datedébut = datedébut;
+    }
     public ArrayList<Worker> getTravailleurs() {
         return travailleurs;
     }
@@ -63,28 +77,16 @@ public class Tache extends Observable {
         return durée;
     }
 
-    public Date getDatedébut() {
-        return datedébut;
-    }
-
-    public void setDatefin(Date datefin) {
-        this.datefin = datefin;
-    }
-
-    public void addRessources(Ressources i){
+    public void addRessources(Ressources i) {
         listRessources.add(i);
     }
 
-    public void addSkills(Skill i){
+    public void addSkills(Skill i) {
         listSkill.add(i);
     }
 
-    public void addtravailleurs(Worker i){
+    public void addtravailleurs(Worker i) {
         travailleurs.add(i);
-    }
-
-    public void setAgenda(AgendaEntry agenda) {
-        this.agenda = agenda;
     }
 
     public void setDeadline(Date deadline) {
@@ -118,17 +120,7 @@ public class Tache extends Observable {
     public void setÉquipe(Team équipe) {
         this.équipe = équipe;
     }
-
-    public Date getDatefin() {
-        return datefin;
-    }
-
-    public void setDatedébut(Date datedébut) {
-        this.datedébut = datedébut;
-    }
-
     public String toString(){
-        return this.toString();
+        return name;
     }
-
 }

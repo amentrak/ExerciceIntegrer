@@ -18,8 +18,7 @@ public class Projet {
     public void addTache(Tache i){
         listTache.add(i);
     }
-
     public String toString(){
-        return this.toString();
+        return name;
     }
 }

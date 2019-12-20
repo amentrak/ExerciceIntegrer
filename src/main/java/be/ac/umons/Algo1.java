@@ -1,9 +1,10 @@
 package be.ac.umons;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 
-public class Simple implements Strategy {
+public class Algo1 implements ChoixAlgo {
     private ArrayList<Skill> ListSkills = new ArrayList<>();
     private ArrayList<Skill> SkillsTeam = new ArrayList<>();
     private int durée;
@@ -48,7 +49,12 @@ public class Simple implements Strategy {
                 for ( int j = 0; j < tache.getÉquipe().getListWorker().size(); j++){
                     for ( int k = 0; j < tache.getÉquipe().getListWorker().get(j).getListSkill().size(); k++) {
                         if (ListSkills.get(i) == tache.getÉquipe().getListWorker().get(j).getListSkill().get(k)) {
-                            df = tache.getÉquipe().getListWorker().get(j).getTaches().get(tache.getÉquipe().getListWorker().get(j).getTaches().size() - 1).getDatefin();
+                            if (tache.getÉquipe().getListWorker().get(j).getListTache().size() != 0) {
+                                df = tache.getÉquipe().getListWorker().get(j).getListTache().get(tache.getÉquipe().getListWorker().get(j).getListTache().size() - 1).getDatefin();
+                            }
+                            else {
+                                df ="01/01/2020";
+                            }
                             tache.setDatedébut(df);
                             df.setDate(df.getDate() + durée);
                             if (deadline.compareTo(df) >= 0) {

@@ -25,8 +25,5 @@ public class Stock  implements RessourceComponent {
     public void removeListener(InvalidationListener invalidationListener) {
 
     }
-
-    public String toString(){
-        return this.toString();
-    }
 }
+

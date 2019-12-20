@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Observable;
 public class Ressources implements RessourceComponent  {
     private String name;
-    private ArrayList<Stock> listStock;
+    private ArrayList<Stock> listStock = new ArrayList<>();
 
     public Ressources(String name){
         this.name=name;
@@ -13,16 +13,12 @@ public class Ressources implements RessourceComponent  {
     public String getName() {
         return name;
     }
-    public void setName(String n) {
-
-    }
+    public void setName(String n) {this.name=name; }
     public ArrayList<Stock> getListStock(){
         return listStock;
     }
 
-    public void addStock(Stock i){
-        listStock.add(i);
-    }
+    public void addStock(Stock i){listStock.add(i);}
 
     @Override
     public void addListener(InvalidationListener invalidationListener) {
@@ -33,8 +29,7 @@ public class Ressources implements RessourceComponent  {
     public void removeListener(InvalidationListener invalidationListener) {
 
     }
-
     public String toString(){
-        return this.toString();
+        return name;
     }
 }

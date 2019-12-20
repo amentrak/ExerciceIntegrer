@@ -1,24 +1,14 @@
 package be.ac.umons;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Manager extends Personne {
-    private String Name;
-    private int id;
-    private String password;
+public class Manager extends Personne{
+    private ChoixAlgo choixalgo;
 
-    public Manager(String Name, int id, String password) {
-        super(Name, id);
-        this.password = password;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public int getId() {
-        return id;
+    public Manager(String name,int id,String password){
+        super(name,id,password);
     }
 
     @Override
@@ -36,7 +26,4 @@ public class Manager extends Personne {
         }
     }
 
-    public String toString(){
-        return this.toString();
-    }
 }
