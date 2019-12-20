@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class Algo1 implements ChoixAlgo {
     private ArrayList<Skill> ListSkills = new ArrayList<>();
@@ -53,7 +54,6 @@ public class Algo1 implements ChoixAlgo {
                 for ( int j = 0; j < tache.getÉquipe().getListWorker().size(); j++){
                     for ( int k = 0; j < tache.getÉquipe().getListWorker().get(j).getListSkill().size(); k++) {
                         if (ListSkills.get(i) == tache.getÉquipe().getListWorker().get(j).getListSkill().get(k)) {
-                            Date df;
                             if (tache.getÉquipe().getListWorker().get(j).getListTache().size() != 0) {
                                 df = tache.getÉquipe().getListWorker().get(j).getListTache().get(tache.getÉquipe().getListWorker().get(j).getListTache().size() - 1).getDatefin();
                             }
@@ -61,7 +61,9 @@ public class Algo1 implements ChoixAlgo {
                                 df = calendar.getTime() ;
                             }
                             tache.setDatedébut(df);
-                            calendar.add(Calendar.DATE, durée);
+                            GregorianCalendar gc = new GregorianCalendar();
+                            gc.setTime(df);
+                            gc.add(GregorianCalendar.DATE, durée);
                             if (deadline.compareTo(df) >= 0) {
                                 tache.setDatefin(df);
                                 tache.addtravailleurs(tache.getÉquipe().getListWorker().get(j));
