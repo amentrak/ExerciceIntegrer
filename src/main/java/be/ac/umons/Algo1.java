@@ -53,7 +53,7 @@ public class Algo1 implements ChoixAlgo {
                                 df = tache.getÉquipe().getListWorker().get(j).getListTache().get(tache.getÉquipe().getListWorker().get(j).getListTache().size() - 1).getDatefin();
                             }
                             else {
-                                df ="01/01/2020";
+                                Date df = new Date(2020,01,01) ;
                             }
                             tache.setDatedébut(df);
                             df.setDate(df.getDate() + durée);
