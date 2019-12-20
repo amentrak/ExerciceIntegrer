@@ -1,5 +1,6 @@
 package be.ac.umons;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
@@ -13,6 +14,7 @@ public class Algo1 implements ChoixAlgo {
 
     public boolean checkElementsinArray(ArrayList<Skill> fixedArray,ArrayList<Skill> inputArray)
     {
+
         if(fixedArray.size() <= inputArray.size())
         {
             for(var i = 0; i < fixedArray.size() ; i++)
@@ -31,6 +33,8 @@ public class Algo1 implements ChoixAlgo {
     }
 
     public void Assignement(Tache tache, ArrayList<Team> teams){
+        Calendar calendar = Calendar.getInstance();
+        Date deadline;
         ListSkills = tache.getListSkill();
         durée = tache.getDurée();
         deadline = tache.getDeadline();
@@ -49,14 +53,15 @@ public class Algo1 implements ChoixAlgo {
                 for ( int j = 0; j < tache.getÉquipe().getListWorker().size(); j++){
                     for ( int k = 0; j < tache.getÉquipe().getListWorker().get(j).getListSkill().size(); k++) {
                         if (ListSkills.get(i) == tache.getÉquipe().getListWorker().get(j).getListSkill().get(k)) {
+                            Date df;
                             if (tache.getÉquipe().getListWorker().get(j).getListTache().size() != 0) {
                                 df = tache.getÉquipe().getListWorker().get(j).getListTache().get(tache.getÉquipe().getListWorker().get(j).getListTache().size() - 1).getDatefin();
                             }
                             else {
-                                Date df = new Date(2020,01,01) ;
+                                df = calendar.getTime() ;
                             }
                             tache.setDatedébut(df);
-                            df.setDate(df.getDate() + durée);
+                            calendar.add(Calendar.DATE, durée);
                             if (deadline.compareTo(df) >= 0) {
                                 tache.setDatefin(df);
                                 tache.addtravailleurs(tache.getÉquipe().getListWorker().get(j));

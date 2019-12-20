@@ -19,6 +19,7 @@ public class Tache extends Observable {
     private Date datedébut;
     private Date datefin;
 
+
     public Tache(){}
     public Tache(String name, String description, ArrayList<Ressources> listRessources, int durée, Date deadline, ArrayList<Skill> listSkill) {
         this.name = name;
